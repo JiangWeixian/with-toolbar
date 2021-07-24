@@ -1,3 +1,1 @@
-import Demo from './demo'
-
-export { Demo }
+export { ToolbarMenu, withToolbar } from './ToolbarMenu'
