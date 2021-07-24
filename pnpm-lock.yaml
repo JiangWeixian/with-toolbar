@@ -12,6 +12,7 @@ specifiers:
   '@types/react': 17.0.14
   '@types/react-dom': 17.0.9
   '@types/react-redux': 7.0.7
+  '@vitejs/plugin-react-refresh': ^1.3.1
   autoprefixer: 10.3.1
   babel-plugin-import: 1.13.3
   classnames: 2.3.1
@@ -55,6 +56,7 @@ specifiers:
   ts-jest: 27.0.3
   ts-loader: 9.2.3
   typescript: ^4.3.5
+  vite: ^2.4.3
 
 dependencies:
   classnames: 2.3.1
@@ -72,6 +74,7 @@ devDependencies:
   '@types/react': 17.0.14
   '@types/react-dom': 17.0.9
   '@types/react-redux': 7.0.7
+  '@vitejs/plugin-react-refresh': 1.3.5
   autoprefixer: 10.3.1_postcss@8.3.6
   babel-plugin-import: 1.13.3
   core-js: 3.15.2
@@ -113,6 +116,7 @@ devDependencies:
   ts-jest: 27.0.3_jest@27.0.6+typescript@4.3.5
   ts-loader: 9.2.3_typescript@4.3.5
   typescript: 4.3.5
+  vite: 2.4.3
 
 packages:
 
@@ -1128,6 +1132,26 @@ packages:
       '@babel/plugin-transform-react-jsx': 7.14.5_@babel+core@7.14.6
     dev: true
 
+  /@babel/plugin-transform-react-jsx-self/7.14.5_@babel+core@7.14.6:
+    resolution: {integrity: sha512-M/fmDX6n0cfHK/NLTcPmrfVAORKDhK8tyjDhyxlUjYyPYYO8FRWwuxBA3WBx8kWN/uBUuwGa3s/0+hQ9JIN3Tg==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/core': 7.14.6
+      '@babel/helper-plugin-utils': 7.14.5
+    dev: true
+
+  /@babel/plugin-transform-react-jsx-source/7.14.5_@babel+core@7.14.6:
+    resolution: {integrity: sha512-1TpSDnD9XR/rQ2tzunBVPThF5poaYT9GqP+of8fAtguYuI/dm2RkrMBDemsxtY0XBzvW7nXjYM0hRyKX9QYj7Q==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/core': 7.14.6
+      '@babel/helper-plugin-utils': 7.14.5
+    dev: true
+
   /@babel/plugin-transform-react-jsx/7.14.5_@babel+core@7.14.6:
     resolution: {integrity: sha512-7RylxNeDnxc1OleDm0F5Q/BSL+whYRbOAR+bwgCxIr0L32v7UFh/pz1DLMZideAUxKT6eMoS2zQH6fyODLEi8Q==}
     engines: {node: '>=6.9.0'}
@@ -1706,6 +1730,14 @@ packages:
       fastq: 1.11.1
     dev: true
 
+  /@rollup/pluginutils/4.1.1:
+    resolution: {integrity: sha512-clDjivHqWGXi7u+0d2r2sBi4Ie6VLEAzWMIkvJLnDmxoOhBYOTfzGbOQBA32THHm11/LiJbd01tJUpJsbshSWQ==}
+    engines: {node: '>= 8.0.0'}
+    dependencies:
+      estree-walker: 2.0.2
+      picomatch: 2.3.0
+    dev: true
+
   /@samverschueren/stream-to-observable/0.3.1_rxjs@6.6.7:
     resolution: {integrity: sha512-c/qwwcHyafOQuVQJj0IlBjf5yYgBI7YPJ77k4fOJYesb41jio65eaJODRUmfYKhTOFBrIZ66kgvGPlNbjuoRdQ==}
     engines: {node: '>=6'}
@@ -2107,6 +2139,19 @@ packages:
     dependencies:
       '@typescript-eslint/types': 4.28.4
       eslint-visitor-keys: 2.1.0
+    dev: true
+
+  /@vitejs/plugin-react-refresh/1.3.5:
+    resolution: {integrity: sha512-7c4ELQMygKw5YFCNMLhDHrt4BOgXmROP65gPax/W43mJPNQaYW8ny1kI/bvCDNuzMqZWSK8uf2tEjPVVBnZ5IQ==}
+    engines: {node: '>=12.0.0'}
+    dependencies:
+      '@babel/core': 7.14.6
+      '@babel/plugin-transform-react-jsx-self': 7.14.5_@babel+core@7.14.6
+      '@babel/plugin-transform-react-jsx-source': 7.14.5_@babel+core@7.14.6
+      '@rollup/pluginutils': 4.1.1
+      react-refresh: 0.10.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /abab/2.0.5:
@@ -4083,6 +4128,12 @@ packages:
       es6-symbol: 3.1.3
     dev: true
 
+  /esbuild/0.12.15:
+    resolution: {integrity: sha512-72V4JNd2+48eOVCXx49xoSWHgC3/cCy96e7mbXKY+WOWghN00cCmlGnwVLRhRHorvv0dgCyuMYBZlM2xDM5OQw==}
+    hasBin: true
+    requiresBuild: true
+    dev: true
+
   /escalade/3.1.1:
     resolution: {integrity: sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw==}
     engines: {node: '>=6'}
@@ -4447,6 +4498,10 @@ packages:
   /estraverse/5.2.0:
     resolution: {integrity: sha512-BxbNGGNm0RyRYvUdHpIwv9IWzeM9XClbOxwoATuFdOE7ZE6wHL+HQ5T8hoPM+zHvmKzzsEqhgy0GrQ5X13afiQ==}
     engines: {node: '>=4.0'}
+    dev: true
+
+  /estree-walker/2.0.2:
+    resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
     dev: true
 
   /esutils/2.0.3:
@@ -9256,6 +9311,11 @@ packages:
       react: 17.0.2
     dev: true
 
+  /react-refresh/0.10.0:
+    resolution: {integrity: sha512-PgidR3wST3dDYKr6b4pJoqQFpPGNKDSCDx4cZoshjXipw3LzO7mG1My2pwEzz2JVkF+inx3xRpDeQLFQGH/hsQ==}
+    engines: {node: '>=0.10.0'}
+    dev: true
+
   /react-shallow-renderer/16.14.1_react@17.0.2:
     resolution: {integrity: sha512-rkIMcQi01/+kxiTE9D3fdS959U1g7gs+/rborw++42m1O9FAQiNI/UNRZExVUoAOprn4umcXf+pFRou8i4zuBg==}
     peerDependencies:
@@ -9719,6 +9779,14 @@ packages:
     hasBin: true
     dependencies:
       glob: 7.1.7
+    dev: true
+
+  /rollup/2.53.3:
+    resolution: {integrity: sha512-79QIGP5DXz5ZHYnCPi3tLz+elOQi6gudp9YINdaJdjG0Yddubo6JRFUM//qCZ0Bap/GJrsUoEBVdSOc4AkMlRA==}
+    engines: {node: '>=10.0.0'}
+    hasBin: true
+    optionalDependencies:
+      fsevents: 2.3.2
     dev: true
 
   /rope-sequence/1.3.2:
@@ -11089,6 +11157,19 @@ packages:
       cloneable-readable: 1.1.3
       remove-trailing-separator: 1.1.0
       replace-ext: 1.0.1
+    dev: true
+
+  /vite/2.4.3:
+    resolution: {integrity: sha512-iT6NPeiUUZ2FkzC3eazytOEMRaM4J+xgRQcNcpRcbmfYjakCFP4WKPJpeEz1U5JEKHAtwv3ZBQketQUFhFU3ng==}
+    engines: {node: '>=12.0.0'}
+    hasBin: true
+    dependencies:
+      esbuild: 0.12.15
+      postcss: 8.3.6
+      resolve: 1.20.0
+      rollup: 2.53.3
+    optionalDependencies:
+      fsevents: 2.3.2
     dev: true
 
   /w3c-hr-time/1.0.2:
