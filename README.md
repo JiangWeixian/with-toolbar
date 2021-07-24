@@ -3,7 +3,12 @@
 
 [![npm](https://img.shields.io/npm/v/@aiou/with-toolbar)](https://github.com/JiangWeixian/templates/tree/master/packages/react-components-lib-template) [![GitHub](https://img.shields.io/npm/l/@aiou/react-components-lib-template)](https://github.com/JiangWeixian/templates/tree/master/packages/react-components-lib-template)
 
+<div align='center'>
 
+![image-caption](./snapshots/toolbar.png)  
+*▲ with-toolbar*
+
+</div>
 
 ## install
 
