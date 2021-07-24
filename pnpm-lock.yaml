@@ -36,7 +36,7 @@ specifiers:
   gulp-stylus: 2.7.0
   gulp-ts-alias: ^2.0.0
   gulp-typescript: 5.0.1
-  husky: 3.0.0
+  husky: 3.x
   jest: 27.0.6
   jest-css-modules: ^2.1.0
   lint-staged: ^11.0.1
@@ -106,7 +106,7 @@ devDependencies:
   gulp-stylus: 2.7.0
   gulp-ts-alias: 2.0.0
   gulp-typescript: 5.0.1_typescript@4.3.5
-  husky: 3.0.0
+  husky: 3.1.0
   jest: 27.0.6
   jest-css-modules: 2.1.0
   lint-staged: 11.1.0
@@ -5648,16 +5648,17 @@ packages:
     engines: {node: '>=10.17.0'}
     dev: true
 
-  /husky/3.0.0:
-    resolution: {integrity: sha512-lKMEn7bRK+7f5eWPNGclDVciYNQt0GIkAQmhKl+uHP1qFzoN0h92kmH9HZ8PCwyVA2EQPD8KHf0FYWqnTxau+Q==}
+  /husky/3.1.0:
+    resolution: {integrity: sha512-FJkPoHHB+6s4a+jwPqBudBDvYZsoQW5/HBuMSehC8qDiCe50kpcxeqFoDSlow+9I6wg47YxBoT3WxaURlrDIIQ==}
     engines: {node: '>=8.6.0'}
     hasBin: true
     requiresBuild: true
     dependencies:
+      chalk: 2.4.2
+      ci-info: 2.0.0
       cosmiconfig: 5.2.1
       execa: 1.0.0
       get-stdin: 7.0.0
-      is-ci: 2.0.0
       opencollective-postinstall: 2.0.3
       pkg-dir: 4.2.0
       please-upgrade-node: 3.2.0
