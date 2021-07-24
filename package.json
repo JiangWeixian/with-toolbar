@@ -1,22 +1,21 @@
 {
-  "homepage": "https://github.com/JiangWeixian/templates#readme",
+  "homepage": "https://github.com/JiangWeixian/with-toolbar#readme",
   "bugs": {
-    "url": "https://github.com/JiangWeixian/templates/issues",
+    "url": "https://github.com/JiangWeixian/with-toolbar/issues",
     "email": "jiangweixian1994@gmail.com"
   },
-  "name": "@aiou/react-components-lib-template",
-  "version": "1.2.3",
-  "description": "react-components-lib-template",
+  "name": "with-toolbar",
+  "version": "1.0.0",
+  "description": "hoc components for rich-markdown-editor",
   "keywords": [
     "react",
     "components",
-    "sortable"
+    "rich-editor-components"
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JiangWeixian/templates",
-    "directory": "packages/react-components-lib-template"
+    "url": "https://github.com/JiangWeixian/with-toolbar"
   },
   "author": "JW <jiangweixian1994@gmail.com> (https://twitter.com/jiangweixian)",
   "main": "lib/index.js",
@@ -47,9 +46,7 @@
     "rich-markdown-editor": "^11.15.0"
   },
   "dependencies": {
-    "classnames": "2.3.1",
     "lodash.capitalize": "^4.2.1",
-    "lodash.isnull": "3.0.0",
     "prosemirror-utils": "^0.9.6",
     "prosemirror-view": "^1.18.11",
     "styled-components": "^5.3.0"
@@ -117,6 +114,5 @@
     "commitizen": {
       "path": "cz-emoji"
     }
-  },
-  "gitHead": "3610e9f46affc8631d4a868146984905bd5f2a5e"
+  }
 }
