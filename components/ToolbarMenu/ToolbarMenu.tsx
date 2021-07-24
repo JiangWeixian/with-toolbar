@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import React from 'react'
-import capitalize from 'lodash/capitalize'
+import capitalize from 'lodash.capitalize'
 import { EditorView } from 'prosemirror-view'
 import { findParentNode } from 'prosemirror-utils'
 import styled from 'styled-components'
@@ -247,8 +247,6 @@ export const Wrapper = styled.div`
   }};
   background-color: ${(props) => props.theme.blockToolbarBackground};
   border-radius: 4px;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.08) 0px 4px 8px,
-    rgba(0, 0, 0, 0.08) 0px 2px 4px;
   transform: scale(0.95);
   transition: opacity 150ms cubic-bezier(0.175, 0.885, 0.32, 1.275),
     transform 150ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -277,4 +275,7 @@ export const Wrapper = styled.div`
   @media print {
     display: none;
   }
+
+  position: relative;
+  left: -20px;
 `
