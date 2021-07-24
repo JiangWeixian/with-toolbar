@@ -1,22 +1,20 @@
-import RichMarkdownEditor, { Props } from "rich-markdown-editor";
+import RichMarkdownEditor, { Props } from 'rich-markdown-editor'
 import React from 'react'
 import { ToolbarMenu } from './ToolbarMenu'
 
-export const withToolbar =
-  (WrappedComponent: typeof RichMarkdownEditor) => {
-    return class WithStickBarEditor extends WrappedComponent {
-      static displayName = 'WithToolbar(RichMarkdownEditor)'
-      
+export const withToolbar = (WrappedComponent: typeof RichMarkdownEditor) => {
+  return class WithStickBarEditor extends WrappedComponent {
+    static displayName = 'WithToolbar(RichMarkdownEditor)'
 
-      constructor (props: Props) {
-        super(props)
-      }
-  
-      render() {
-        return (
-          <>
-            {
-              this.view && <ToolbarMenu
+    constructor(props: Props) {
+      super(props)
+    }
+
+    render() {
+      return (
+        <>
+          {this.view && (
+            <ToolbarMenu
               view={this.view}
               commands={this.commands}
               dictionary={this.dictionary(this.props.dictionary)}
@@ -28,10 +26,10 @@ export const withToolbar =
               onImageUploadStop={this.props.onImageUploadStop}
               onShowToast={this.props.onShowToast}
             />
-            }
-            {super.render()}
-          </>
-        )
-      }
+          )}
+          {super.render()}
+        </>
+      )
     }
   }
+}
