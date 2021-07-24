@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import React from 'react'
 import renderer from 'react-test-renderer'
 import RichMarkdownEditor from 'rich-markdown-editor'
