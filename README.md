@@ -1,7 +1,7 @@
 # with-toolbar
 > inject toolbar for rich-markdown-editor
 
-[![npm](https://img.shields.io/npm/v/@aiou/with-toolbar)](https://github.com/JiangWeixian/templates/tree/master/packages/react-components-lib-template) [![GitHub](https://img.shields.io/npm/l/@aiou/react-components-lib-template)](https://github.com/JiangWeixian/templates/tree/master/packages/react-components-lib-template)
+[![npm](https://img.shields.io/npm/v/with-toolbar)](https://github.com/JiangWeixian/with-toolbar) [![GitHub](https://img.shields.io/npm/l/with-toolbar)](https://github.com/JiangWeixian/with-toolbar)
 
 <div align='center'>
 
