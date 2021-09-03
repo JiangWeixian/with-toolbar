@@ -9,10 +9,8 @@ import ToolbarMenuItem from './MenuItem'
 import VisuallyHidden from 'rich-markdown-editor/dist/components/VisuallyHidden'
 import getDataTransferFiles from 'rich-markdown-editor/dist/lib/getDataTransferFiles'
 import insertFiles from 'rich-markdown-editor/dist/commands/insertFiles'
-import getMenuItems from 'rich-markdown-editor/dist/menus/block'
 import baseDictionary from 'rich-markdown-editor/dist/dictionary'
-
-const SSR = typeof window === 'undefined'
+import getMenuItems from './menus'
 
 type Props = {
   rtl: boolean
@@ -26,30 +24,9 @@ type Props = {
   onLinkToolbarOpen: () => void
   onClose: () => void
 }
-
-type State = {
-  selectedIndex: number
-}
-
-const defaultSelectedIndex = -1
-
-export class ToolbarMenu extends React.Component<Props, State> {
+export class ToolbarMenu extends React.Component<Props> {
   menuRef = React.createRef<HTMLDivElement>()
   inputRef = React.createRef<HTMLInputElement>()
-
-  state: State = {
-    selectedIndex: defaultSelectedIndex,
-  }
-
-  componentDidMount() {
-    // mounted
-  }
-
-  componentWillUnmount() {
-    if (!SSR) {
-      // unmount
-    }
-  }
 
   insertItem = (item: MenuItem) => {
     switch (item.name) {
@@ -113,8 +90,6 @@ export class ToolbarMenu extends React.Component<Props, State> {
   }
 
   insertBlock(item: MenuItem) {
-    this.clearSearch()
-
     const command = this.props.commands[item.name!]
     if (command) {
       command(item.attrs)
@@ -129,9 +104,7 @@ export class ToolbarMenu extends React.Component<Props, State> {
     const { dictionary, uploadImage, commands } = this.props
     const items: MenuItem[] = getMenuItems(dictionary)
 
-    const filtered = items.filter((item) => {
-      if (item.name === 'separator') return true
-
+    return items.filter((item) => {
       // Some extensions may be disabled, remove corresponding menu items
       if (item.name && !commands[item.name] && !commands[`create${capitalize(item.name)}`]) {
         return false
@@ -143,23 +116,6 @@ export class ToolbarMenu extends React.Component<Props, State> {
       // some items (defaultHidden) are not visible until a search query exists
       return !item.defaultHidden
     })
-
-    // this block literally just trims unneccessary separators from the results
-    return filtered.reduce((acc, item, index) => {
-      // trim separators from start / end
-      if (item.name === 'separator' && index === 0) return acc
-      if (item.name === 'separator' && index === filtered.length - 1) return acc
-
-      // trim double separators looking ahead / behind
-      const prev = filtered[index - 1]
-      if (prev && prev.name === 'separator' && item.name === 'separator') return acc
-
-      const next = filtered[index + 1]
-      if (next && next.name === 'separator' && item.name === 'separator') return acc
-
-      // otherwise, continue
-      return [...acc, item]
-    }, [])
   }
 
   render() {
@@ -170,15 +126,6 @@ export class ToolbarMenu extends React.Component<Props, State> {
       <Wrapper id="block-menu-container" ref={this.menuRef}>
         <List>
           {items.map((item, index) => {
-            if (item.name === 'separator') {
-              return (
-                <ListItem key={index}>
-                  <hr />
-                </ListItem>
-              )
-            }
-            const selected = index === this.state.selectedIndex
-
             if (!item.title || !item.icon) {
               return null
             }
@@ -187,7 +134,7 @@ export class ToolbarMenu extends React.Component<Props, State> {
               <ListItem key={index}>
                 <ToolbarMenuItem
                   onClick={() => this.insertItem(item)}
-                  selected={selected}
+                  tooltip={item.tooltip!}
                   icon={item.icon}
                 />
               </ListItem>
