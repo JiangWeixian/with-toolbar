@@ -21,7 +21,6 @@ export const withToolbar = (WrappedComponent: typeof RichMarkdownEditor) => {
               rtl={this.state.isRTL}
               onClose={this.handleCloseBlockMenu}
               uploadImage={this.props.uploadImage}
-              onLinkToolbarOpen={this.handleOpenLinkMenu}
               onImageUploadStart={this.props.onImageUploadStart}
               onImageUploadStop={this.props.onImageUploadStop}
               onShowToast={this.props.onShowToast}

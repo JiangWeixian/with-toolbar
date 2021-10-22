@@ -21,7 +21,6 @@ type Props = {
   onImageUploadStart?: () => void
   onImageUploadStop?: () => void
   onShowToast?: (message: string, id: string) => void
-  onLinkToolbarOpen: () => void
   onClose: () => void
 }
 export class ToolbarMenu extends React.Component<Props> {
@@ -33,9 +32,7 @@ export class ToolbarMenu extends React.Component<Props> {
       case 'image':
         return this.triggerImagePick()
       case 'link': {
-        this.clearSearch()
-        this.props.onClose()
-        this.props.onLinkToolbarOpen()
+        this.insertBlock(item)
         return
       }
       default:
