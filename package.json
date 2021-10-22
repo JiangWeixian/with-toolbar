@@ -11,13 +11,17 @@
   "homepage": "https://github.com/JiangWeixian/with-toolbar#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JiangWeixian/with-toolbar"
+    "url": "git+https://github.com/JiangWeixian/with-toolbar.git"
   },
   "bugs": {
     "url": "https://github.com/JiangWeixian/with-toolbar/issues",
     "email": "jiangweixian1994@gmail.com"
   },
-  "author": "JW <jiangweixian1994@gmail.com> (https://twitter.com/jiangweixian)",
+  "author": {
+    "name": "JW",
+    "email": "jiangweixian1994@gmail.com",
+    "url": "https://twitter.com/jiangweixian"
+  },
   "main": "lib/index.js",
   "module": "es/index.js",
   "typings": "lib/index.d.ts",
@@ -25,20 +29,20 @@
     "dev:demo": "vite",
     "build:demo": "vite build",
     "lint:fix": "eslint . --fix",
-    "test": "pnpm run build&& cross-env NODE_ENV=test jest",
+    "test": "pnpm run build && cross-env NODE_ENV=test jest",
     "clean": "rimraf es && rimraf lib",
     "dev": "cross-env NODE_ENV=production gulp watch",
     "build": "pnpm run clean && cross-env NODE_ENV=production gulp compile",
     "publish": "pnpm run build && pnpm changeset publish",
-    "release": "np --no-cleanup --yolo --no-publish --any-branch"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "release": "np --no-cleanup --yolo --no-publish --any-branch",
+    "ci:publish": "pnpm run build && pnpx changeset publish",
+    "ci:version": "pnpx changeset version",
+    "ci:snapshot": "pnpx changeset version --snapshot beta",
+    "ci:prerelease": "pnpm run build && pnpx changeset publish --tag beta",
+    "prepare": "husky install"
   },
   "lint-staged": {
-    "**/**/*.{js,ts,vue,json}": [
+    "**/**/*.{js,ts,tsx,vue,json}": [
       "eslint --fix"
     ]
   },
@@ -64,7 +68,7 @@
     "@types/jest": "^27.0.1",
     "@types/lodash.capitalize": "^4.2.6",
     "@types/prosemirror-view": "^1.18.0",
-    "@types/react": "17.0.20",
+    "@types/react": "17.0.31",
     "@types/react-dom": "17.0.9",
     "@types/styled-components": "^5.1.11",
     "@vitejs/plugin-react-refresh": "^1.3.1",
@@ -87,7 +91,7 @@
     "gulp-stylus": "2.7.0",
     "gulp-ts-alias": "^2.0.0",
     "gulp-typescript": "5.0.1",
-    "husky": "3.x",
+    "husky": "^7.0.0",
     "jest": "27.2.0",
     "jest-css-modules": "^2.1.0",
     "lint-staged": "^11.0.1",
