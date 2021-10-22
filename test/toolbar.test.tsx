@@ -9,8 +9,8 @@ import { withToolbar } from '../components/ToolbarMenu/index'
 
 const WithToolbarEditor = withToolbar(RichMarkdownEditor)
 
-describe('hello', () => {
-  test('example jest with ts', () => {
+describe('snapshot', () => {
+  test('default', () => {
     const component = renderer.create(<WithToolbarEditor />)
     const tree = component.toJSON()
     expect(tree).toMatchSnapshot()
