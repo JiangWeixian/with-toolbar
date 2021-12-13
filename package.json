@@ -1,6 +1,6 @@
 {
   "name": "with-toolbar",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "hoc components for rich-markdown-editor",
   "keywords": [
     "react",
